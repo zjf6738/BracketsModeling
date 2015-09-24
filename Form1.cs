@@ -9,6 +9,9 @@ using System.Windows.Forms;
 
 using Kitware.VTK;
 
+
+// 整个程序由vtk负责渲染各种三维目标
+
 namespace WindowsFormsApplication2
 {
     public partial class Form1 : Form

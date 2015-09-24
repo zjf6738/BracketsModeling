@@ -11,6 +11,10 @@ using Kitware.VTK;
 
 
 // 整个程序由vtk负责渲染各种三维目标
+// C#使用了很多之前我没有使用的技术，例如命名空间。
+// 程序里头还使用了很多中文，我也是晕了
+
+
 
 namespace WindowsFormsApplication2
 {

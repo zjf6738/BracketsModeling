@@ -15,6 +15,8 @@ using Kitware.VTK;
 // 程序里头还使用了很多中文，我也是晕了
 
 // 这是从master分支分出来的第三个分支，通常而言，不要分出这么多的分支
+// 我们继续在WFA3这个分支上做修改操作。这样一来，一个分支树就成型了
+
 
 namespace WindowsFormsApplication2
 {

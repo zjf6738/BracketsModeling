@@ -14,6 +14,8 @@ using Kitware.VTK;
 // C#使用了很多之前我没有使用的技术，例如命名空间。
 // 程序里头还使用了很多中文，我也是晕了
 
+// 这里，我增加了很多没用的东西，这个提交到时是要删除掉的。test1
+
 
 
 namespace WindowsFormsApplication2

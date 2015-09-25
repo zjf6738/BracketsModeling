@@ -15,6 +15,7 @@ using Kitware.VTK;
 // 程序里头还使用了很多中文，我也是晕了
 
 // 前一个分支所做的工作都出现问题，目前从该问题点重新编写代码WFA1
+// 我们同样也在WFA2这个分支上进行操作，这样WFA2上的分支也可以同时进行了
 
 
 namespace WindowsFormsApplication2

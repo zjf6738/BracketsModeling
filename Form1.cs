@@ -22,22 +22,22 @@ namespace WindowsFormsApplication2
     {
         private string FilePath;        //文件路径
         private string FileFullName;   //文件
-        private vtkActor actor;
-        private vtkPolyDataMapper mapper;
-        private vtkPolyData originalMesh;
-        vtkRenderWindow renderWindow;
-        vtkRenderer renderer;
-        bool MousePick = false;
-
-        int pickedId;   //鼠标点击所获取的id
-        double[] posit; //鼠标点击点的三维坐标
-
+        private vtkActor actor;         // vtk actor
+        private vtkPolyDataMapper mapper; //vtk 多边形数据映射器
+        private vtkPolyData originalMesh;  // 多边形原始数据 
+        vtkRenderWindow renderWindow;   // 渲染窗口
+        vtkRenderer renderer;           // 渲染器
+        
+        bool MousePick = false;         // 鼠标拾取
+        int pickedId;   //鼠标点击所获取的id    // 三维拾取
+        double[] posit; //鼠标点击点的三维坐标    
         vtkCellPicker picker;
-        vtkObject.vtkObjectEventHandler InteractorHandler = null;
-        vtkInteractorStyleUser UserStyle = null;
-        vtkObject.vtkObjectEventHandler UserHandler = null;
-        vtkOutputWindow ErrorWindow = null;
-        vtkObject.vtkObjectEventHandler ErrorHandler = null;
+
+        vtkObject.vtkObjectEventHandler InteractorHandler = null;  // vtk回调函数
+        vtkInteractorStyleUser UserStyle = null;                   // 用户交互类别
+        vtkObject.vtkObjectEventHandler UserHandler = null;        // vtk对象时间回调函数
+        vtkOutputWindow ErrorWindow = null;                        // 错误信息输出
+        vtkObject.vtkObjectEventHandler ErrorHandler = null;       // 异常处理
         
         public Form1()
         {
@@ -111,13 +111,20 @@ namespace WindowsFormsApplication2
 
         private void 网格ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            网格ToolStripMenuItem.Checked=!网格ToolStripMenuItem.Checked;
-            int n = actor.GetProperty().GetRepresentation();         //  2:Surface   1:Wireframe
-            if (网格ToolStripMenuItem.Checked && n == 2)
-                actor.GetProperty().SetRepresentationToWireframe();
-            else if (!网格ToolStripMenuItem.Checked && n == 1)
-                actor.GetProperty().SetRepresentationToSurface();
-            renderWindow.Render();
+            try
+            {
+                网格ToolStripMenuItem.Checked = !网格ToolStripMenuItem.Checked;
+                int n = actor.GetProperty().GetRepresentation();         //  2:Surface   1:Wireframe
+                if (网格ToolStripMenuItem.Checked && n == 2)
+                    actor.GetProperty().SetRepresentationToWireframe();
+                else if (!网格ToolStripMenuItem.Checked && n == 1)
+                    actor.GetProperty().SetRepresentationToSurface();
+                renderWindow.Render();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("未找到模型对象，请确认模型对象已正确载入", "Exception", MessageBoxButtons.OK);
+            }
         }
 
         /// <summary>
@@ -551,6 +558,31 @@ namespace WindowsFormsApplication2
             if (拉伸工具ToolStripMenuItem.Checked)
                 this.HookEvents();
             else this.UnhookEvents();
+        }
+
+        // 增加工具条功能
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            打开ToolStripMenuItem_Click(sender, e);
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            网格ToolStripMenuItem_Click(sender, e);
+        }
+
+        // 增加右键功能
+        private void 格网ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            网格ToolStripMenuItem_Click(sender, e);
+        }
+        protected override void OnMouseUp(MouseEventArgs e)
+        {
+            base.OnMouseUp(e);
+            if (e.Button == MouseButtons.Right)
+            {
+                contextMenuStrip1.Show(this, e.Location);
+            }
         }
 
 

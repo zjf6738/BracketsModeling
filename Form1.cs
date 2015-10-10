@@ -585,6 +585,14 @@ namespace WindowsFormsApplication2
             }
         }
 
+        private void AboutBmd_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBox1 AboutDlg = new AboutBox1();
+            AboutDlg.Show();
+        }
+
+
+
 
 
 

@@ -36,6 +36,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.打开ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.编辑ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.格网 = new System.Windows.Forms.ToolStripMenuItem();
             this.网格ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.托槽编辑工具ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,6 +55,10 @@
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.格网ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.相机ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.窗口ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AboutBmd_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -66,9 +71,9 @@
             this.renderWindowControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.renderWindowControl1.Location = new System.Drawing.Point(3, 91);
+            this.renderWindowControl1.Location = new System.Drawing.Point(3, 52);
             this.renderWindowControl1.Name = "renderWindowControl1";
-            this.renderWindowControl1.Size = new System.Drawing.Size(588, 418);
+            this.renderWindowControl1.Size = new System.Drawing.Size(588, 457);
             this.renderWindowControl1.TabIndex = 0;
             this.renderWindowControl1.TestText = null;
             this.renderWindowControl1.Load += new System.EventHandler(this.renderWindowControl1_Load);
@@ -96,8 +101,12 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.文件ToolStripMenuItem,
+            this.编辑ToolStripMenuItem,
             this.格网,
-            this.托槽编辑工具ToolStripMenuItem});
+            this.相机ToolStripMenuItem,
+            this.托槽编辑工具ToolStripMenuItem,
+            this.窗口ToolStripMenuItem,
+            this.帮助ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(787, 24);
@@ -109,8 +118,8 @@
             this.文件ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.打开ToolStripMenuItem});
             this.文件ToolStripMenuItem.Name = "文件ToolStripMenuItem";
-            this.文件ToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
-            this.文件ToolStripMenuItem.Text = "文件";
+            this.文件ToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.文件ToolStripMenuItem.Text = "文件(F)";
             // 
             // 打开ToolStripMenuItem
             // 
@@ -119,13 +128,19 @@
             this.打开ToolStripMenuItem.Text = "打开";
             this.打开ToolStripMenuItem.Click += new System.EventHandler(this.打开ToolStripMenuItem_Click);
             // 
+            // 编辑ToolStripMenuItem
+            // 
+            this.编辑ToolStripMenuItem.Name = "编辑ToolStripMenuItem";
+            this.编辑ToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.编辑ToolStripMenuItem.Text = "编辑(E)";
+            // 
             // 格网
             // 
             this.格网.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.网格ToolStripMenuItem});
             this.格网.Name = "格网";
-            this.格网.Size = new System.Drawing.Size(41, 20);
-            this.格网.Text = "显示";
+            this.格网.Size = new System.Drawing.Size(59, 20);
+            this.格网.Text = "视图(V)";
             // 
             // 网格ToolStripMenuItem
             // 
@@ -140,20 +155,20 @@
             this.增加结点ToolStripMenuItem,
             this.拉伸工具ToolStripMenuItem});
             this.托槽编辑工具ToolStripMenuItem.Name = "托槽编辑工具ToolStripMenuItem";
-            this.托槽编辑工具ToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
-            this.托槽编辑工具ToolStripMenuItem.Text = "托槽编辑工具";
+            this.托槽编辑工具ToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.托槽编辑工具ToolStripMenuItem.Text = "工具(T)";
             // 
             // 增加结点ToolStripMenuItem
             // 
             this.增加结点ToolStripMenuItem.Name = "增加结点ToolStripMenuItem";
-            this.增加结点ToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.增加结点ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.增加结点ToolStripMenuItem.Text = "增加结点";
             this.增加结点ToolStripMenuItem.Click += new System.EventHandler(this.增加结点ToolStripMenuItem_Click);
             // 
             // 拉伸工具ToolStripMenuItem
             // 
             this.拉伸工具ToolStripMenuItem.Name = "拉伸工具ToolStripMenuItem";
-            this.拉伸工具ToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.拉伸工具ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.拉伸工具ToolStripMenuItem.Text = "拉伸工具";
             this.拉伸工具ToolStripMenuItem.Click += new System.EventHandler(this.拉伸工具ToolStripMenuItem_Click);
             // 
@@ -207,7 +222,7 @@
             this.state.AutoSize = false;
             this.state.Name = "state";
             this.state.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.state.Size = new System.Drawing.Size(703, 17);
+            this.state.Size = new System.Drawing.Size(772, 17);
             this.state.Spring = true;
             // 
             // label3
@@ -225,30 +240,33 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(787, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(787, 39);
             this.toolStrip1.TabIndex = 9;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripButton1
             // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(49, 22);
+            this.toolStripButton1.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton1.Text = "打开";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButton2
             // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(49, 22);
+            this.toolStripButton2.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton2.Text = "格网";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -257,14 +275,42 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.格网ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(95, 26);
             // 
             // 格网ToolStripMenuItem
             // 
             this.格网ToolStripMenuItem.Name = "格网ToolStripMenuItem";
-            this.格网ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.格网ToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
             this.格网ToolStripMenuItem.Text = "格网";
             this.格网ToolStripMenuItem.Click += new System.EventHandler(this.格网ToolStripMenuItem_Click);
+            // 
+            // 相机ToolStripMenuItem
+            // 
+            this.相机ToolStripMenuItem.Name = "相机ToolStripMenuItem";
+            this.相机ToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.相机ToolStripMenuItem.Text = "相机(C)";
+            // 
+            // 窗口ToolStripMenuItem
+            // 
+            this.窗口ToolStripMenuItem.Name = "窗口ToolStripMenuItem";
+            this.窗口ToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.窗口ToolStripMenuItem.Text = "窗口(W)";
+            // 
+            // 帮助ToolStripMenuItem
+            // 
+            this.帮助ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AboutBmd_ToolStripMenuItem});
+            this.帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
+            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.帮助ToolStripMenuItem.Text = "帮助(H)";
+            // 
+            // AboutBmd_ToolStripMenuItem
+            // 
+            this.AboutBmd_ToolStripMenuItem.Name = "AboutBmd_ToolStripMenuItem";
+            this.AboutBmd_ToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.AboutBmd_ToolStripMenuItem.Text = "关于BracketModel";
+            this.AboutBmd_ToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.AboutBmd_ToolStripMenuItem.Click += new System.EventHandler(this.AboutBmd_ToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -322,6 +368,11 @@
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 格网ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 编辑ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 相机ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 窗口ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 帮助ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AboutBmd_ToolStripMenuItem;
     }
 }
 
